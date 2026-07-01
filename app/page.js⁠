@@ -1,0 +1,31 @@
+import React, { useState } from 'react';
+
+export default function VideoGen() {
+  const [prompt, setPrompt] = useState("");
+
+  return (
+    <div className="min-h-screen bg-gray-900 text-white p-4 font-sans">
+      <header className="mb-6">
+        <h1 className="text-2xl font-bold text-green-500">VideoGen AI</h1>
+        <p className="text-gray-400 text-sm">Créez des vidéos magiques</p>
+      </header>
+
+      <div className="bg-gray-800 p-4 rounded-xl shadow-lg mb-6">
+        <textarea
+          className="w-full bg-gray-700 p-3 rounded-lg mb-4 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+          placeholder="Décris ta vidéo ici..."
+          rows="3"
+          value={prompt}
+          onChange={(e) => setPrompt(e.target.value)}
+        />
+        <button className="w-full bg-green-600 hover:bg-green-500 py-3 rounded-lg font-bold transition">
+          Générer la vidéo
+        </button>
+      </div>
+
+      <div className="bg-black rounded-xl h-64 flex items-center justify-center border-2 border-dashed border-gray-700">
+        <p className="text-gray-500">La vidéo apparaîtra ici</p>
+      </div>
+    </div>
+  );
+}
